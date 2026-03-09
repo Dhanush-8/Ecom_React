@@ -1,0 +1,133 @@
+/* ---------- NAVBAR ---------- */
+.Nav {
+  background-color: #007bff;
+  padding: 10px 20px;
+}
+
+.Nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.Nav ul li {
+  margin-right: 20px;
+}
+
+.Nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.Nav ul li a:hover {
+  background-color: #0056b3;
+  border-radius: 4px;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  background-color: #007bff;
+  text-align: center;
+  color: white;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* ---------- FORM STYLES (SignUp + Login) ---------- */
+.form-container,
+.Register,
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 80px auto 40px;
+  padding: 30px 40px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  max-width: 90%;
+}
+
+.form-container h2,
+.Register h2,
+.login h2 {
+  color: #007bff;
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* Input Fields */
+.inputBox {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.inputBox:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Buttons */
+.button,
+.appButton {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.button:hover,
+.appButton:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* ---------- LOGIN FORM SPECIFIC ---------- */
+.login {
+  margin: 100px auto;
+}
+
+/* ---------- SIGNUP FORM SPECIFIC ---------- */
+.Register {
+  margin-top: 80px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 500px) {
+  .login,
+  .form-container,
+  .Register {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .inputBox,
+  .button,
+  .appButton {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
