@@ -22,7 +22,7 @@ function SignUp() {
       return;
     }
 
-    let result = await fetch("http://localhost:5000/register", {
+    let result = await fetch("http://localhost:5000/api/auth/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -34,7 +34,6 @@ function SignUp() {
       }),
     });
     result = await result.json();
-    console.log(result);
     localStorage.setItem("user",JSON.stringify(result));
     navigate("/");
     alert("User registered successfully 🎉");
