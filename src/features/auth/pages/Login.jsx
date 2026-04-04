@@ -1,9 +1,9 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [email,setEmail] = useState("");
-  const [password,setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async () => {
@@ -59,14 +59,14 @@ const Login = () => {
       </button>
 
       <p style={{ marginTop: "15px" }}>
-  Don't have an account?{" "}
-  <span
-    style={{ color: "#007bff", cursor: "pointer", fontWeight: "bold" }}
-    onClick={() => navigate("/signup")}
-  >
-    Sign Up
-  </span>
-</p>
+        Don't have an account?{" "}
+        <span
+          style={{ color: "#007bff", cursor: "pointer", fontWeight: "bold" }}
+          onClick={() => navigate("/signup")}
+        >
+          Sign Up
+        </span>
+      </p>
     </div>
   );
 };

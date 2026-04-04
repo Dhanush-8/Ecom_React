@@ -1,0 +1,28 @@
+.sidebar {
+  width: 220px;
+  background-color: #0f172a;
+  color: white;
+  padding: 20px;
+}
+
+.logo {
+  margin-bottom: 20px;
+}
+
+.link {
+  display: block;
+  padding: 10px;
+  margin-bottom: 5px;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.link:hover {
+  background-color: #1e293b;
+}
+
+/* 🔥 Active Route */
+.link.active {
+  background-color: #2563eb;
+}

@@ -1,43 +1,39 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import "./Nav.css";
 
 const Nav = () => {
   const navigate = useNavigate();
-
-  // 🧠 Check if user logged in
   const user = localStorage.getItem("user");
 
   const handleLogout = () => {
-    localStorage.removeItem("user"); // remove user
-    navigate("/login"); // redirect
+    localStorage.removeItem("user");
+    navigate("/login");
   };
 
   return (
     <div className="nav">
-      <h2>MyApp 🚀</h2>
+      {/* Left */}
+      <div className="nav-left">
+        <h2 className="logo">🚀 MyApp</h2>
+      </div>
 
-      <ul className="nav-links">
+      {/* Right */}
+      <div className="nav-right">
         {user ? (
-          <>
-            {/* Logged-in user */}
-            <li>
-              <Link to="/app">Dashboard</Link>
-            </li>
-            <li>
-              <button onClick={handleLogout}>Logout</button>
-            </li>
-          </>
+          <button className="logout-btn" onClick={handleLogout}>
+            Logout
+          </button>
         ) : (
           <>
-            {/* Not logged-in */}
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/signup">Signup</Link>
-            </li>
+            <button onClick={() => navigate("/login")} className="nav-btn">
+              Login
+            </button>
+            <button onClick={() => navigate("/signup")} className="nav-btn">
+              Signup
+            </button>
           </>
         )}
-      </ul>
+      </div>
     </div>
   );
 };
