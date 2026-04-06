@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Dashboard.css";
+import { getProjects } from "../services";
 
 const Dashboard = () => {
   const [stats, setStats] = useState(null);
@@ -7,13 +8,7 @@ const Dashboard = () => {
   const [projects, setProjects] = useState([]);
   const [notifications, setNotifications] = useState([]);
 
-  useEffect(() => {
-    // 🔥 You will implement these APIs
-    fetchStats();
-    fetchActivities();
-    fetchProjects();
-    fetchNotifications();
-  }, []);
+
 
   const fetchStats = async () => {
     const res = await fetch("/api/dashboard/stats");
@@ -27,17 +22,25 @@ const Dashboard = () => {
     setActivities(data);
   };
 
-  const fetchProjects = async () => {
-    const res = await fetch("/api/projects");
-    const data = await res.json();
-    setProjects(data);
-  };
 
   const fetchNotifications = async () => {
     const res = await fetch("/api/notifications");
     const data = await res.json();
     setNotifications(data);
   };
+  const fetchProjects = async () => {
+    const data = await getProjects();
+    setProjects(data);
+  };
+  useEffect(() => {
+    // 🔥 You will implement these APIs
+    fetchStats();
+    fetchActivities();
+    fetchProjects();
+    fetchNotifications();
+  }, []);
+
+
 
   return (
     <div className="dashboard">

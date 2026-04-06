@@ -1,5 +1,4 @@
 import { Route } from "react-router-dom";
-
 import Dashboard from "../features/dashboard/pages/Dashboard";
 import Team from "../features/team/pages/Team";
 import Projects from "../features/projects/pages/Projects";
